@@ -1,0 +1,13 @@
+/cs-tools/.vs
+/cs-tools/cs-tools/packages
+/cs-tools/cs-tools/src/obj
+/cs-tools/cs-tools/src/bin
+/cs-tools/cs-tools/main/bin
+/cs-tools/cs-tools/main/obj
+/cs-tools/cs-tools/bin
+/cs-tools/cs-tools/obj
+
+/python-nerf/data
+/python-nerf/output
+/python-nerf/__pycache__
+/python-nerf/.vs

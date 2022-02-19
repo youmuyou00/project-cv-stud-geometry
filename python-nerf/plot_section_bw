@@ -1,0 +1,66 @@
+# from mpl_toolkits.mplot3d import Axes3D
+# import matplotlib.pyplot as plt
+# import pandas
+# '''
+# show all 4d information x,y,z,density as point cloud.
+# '''
+# # points = pandas.read_csv('densitymap_20w.csv')
+# points = pandas.read_csv('./10.layer.csv')
+# fig = plt.figure()
+# ax = fig.add_subplot(111, projection='3d')
+
+# x = points['x'].values
+# y = points['y'].values
+# # z = points['z'].values
+# d = points['d'].values
+
+# # ax.scatter(x, y, z, c=d, cmap='YlOrRd', marker='o')
+# cb = ax.scatter(x, y, c=d, cmap='Accent', marker='o')
+# plt.colorbar(cb)
+
+# plt.title("10th,Z=1.46325443")
+# plt.show()
+
+
+
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+import pandas
+'''
+fig = plt.figure()
+show all 4d information x,y,z,density as point cloud.
+'''
+# points = pandas.read_csv('densitymap_20w.csv')
+
+#fig, ax = plt.subplots(1,2)
+#ax =ax.flatten()
+#fig = plt.figure()
+points = pandas.read_csv('./8.layer.csv')
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+x = points['x'].values
+y = points['y'].values
+z = points['z'].values
+d = points['d'].values
+
+c = ax.scatter(x, y, z, c=d, cmap='Accent', marker='o', vmin=-13,vmax=242)
+
+# points = pandas.read_csv('./2.layer.csv')
+
+
+
+# x2 = points['x'].values
+# y2 = points['y'].values
+# z2 = points['z'].values
+
+# # ax.scatter(x, y, z, c=d, cmap='YlOrRd', marker='o')
+# ax.scatter(x2, y2, z2,c=d, cmap='tab20', marker='o', vmin=-13,vmax=242)
+
+ax.set_zlim3d(0.1, 1.7)
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+cb = plt.colorbar(c)
+cb.set_label('density')
+plt.title("8th Layer Density Plot, Z=1.16325443")
+plt.show()
